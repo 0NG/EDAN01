@@ -1,0 +1,11 @@
+SimpleDFS:
+visited: 32059, failed: 16029
+
+Strategy1:
+visited: 40857, failed: 20428
+
+Strategy2:
+visited: 701141, failed: 350570
+
+Strategy3:
+visited: 1567766, failed: 783753
