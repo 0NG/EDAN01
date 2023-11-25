@@ -14,7 +14,7 @@ public class task1 {
     
         IntVar[] people = new IntVar[n];
         for (int i = 0; i < n; ++i) {
-            IntVar tmp = new IntVar(store, 1, n);
+            IntVar tmp = new IntVar(store, "people_" + i, 1, n);
             people[i] = tmp;
 
             allVars.add(tmp);
@@ -34,7 +34,7 @@ public class task1 {
         int[] toMin = new int[isTaken.length];
         Arrays.fill(toMin, -1);
 
-        IntVar obj = new IntVar(store, -isTaken.length, 0);
+        IntVar obj = new IntVar(store, "max satisfied", -isTaken.length, 0);
         store.impose(new LinearInt(isTaken, toMin, "==", obj));
     
         Search<IntVar> search = new DepthFirstSearch<IntVar>();
@@ -66,7 +66,7 @@ public class task1 {
     
         IntVar[] people = new IntVar[n];
         for (int i = 0; i < n; ++i) {
-            IntVar tmp = new IntVar(store, 1, n);
+            IntVar tmp = new IntVar(store, "people_" + i, 1, n);
             people[i] = tmp;
 
             allVars.add(tmp);
@@ -80,7 +80,7 @@ public class task1 {
             distance[i] = d;
         }
 
-        IntVar maxD = new IntVar(store, 0, n);
+        IntVar maxD = new IntVar(store, "min distance", 0, n);
         store.impose(new Max(distance, maxD));
     
         Search<IntVar> search = new DepthFirstSearch<IntVar>();
